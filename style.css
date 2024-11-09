@@ -55,7 +55,6 @@ p {
     line-height: 1.6;
 }
 
-/* Styling for each section title */
 #right-sidebar h3 {
     font-size: 18px;
     font-weight: bold;
@@ -65,56 +64,97 @@ p {
     padding-bottom: 5px;
 }
 
-/* Additional spacing between sections */
 #right-sidebar .section {
     margin-bottom: 20px;
 }
 
-/* Styling for the AQI details */
 #right-sidebar #aqi-info {
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-/* Weather info */
 #right-sidebar #weather-info {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-/* Styling for the legend */
-#right-sidebar #legend {
-    margin-top: 30px;
+#right-sidebar .legend {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-#right-sidebar #legend .legend-color {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: middle;
-}
-
-#right-sidebar #data-source {
-    font-size: 0.8rem;
-    text-align: center;
-    color: #888;
-}
-
-/* List styling for district */
 #left-sidebar ul {
     list-style-type: none;
-    padding-left: 0;
+    padding: 0;
+    font-size: 0.9rem;
 }
-
 #left-sidebar li {
-    padding: 8px;
+    padding: 6px;
     cursor: pointer;
-    background-color: #f1f1f1;
-    margin-bottom: 5px;
-    border-radius: 5px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}
+#left-sidebar li:hover {
+    background-color: #ddd;
+}
+.selected {
+    background-color: #b0d4ff;
 }
 
-#left-sidebar li:hover {
-    background-color: #ccc;
+#default-zoom-btn {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#default-zoom-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Legend styling */
+#legend {
+    background-color: white;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+}
+.bold-large {
+    font-weight: bold;
+}
+.value-large {
+    font-size: 16px;
+}
+
+/* Style for the layer control icon button */
+.leaflet-control-layers-toggle {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 4px;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+.leaflet-control-layers-toggle::before {
+    color: white;
+    font-size: 20px;
+}
+.leaflet-control-layers-toggle:hover {
+    background-color: #333;
+    transform: scale(1.1);
 }
