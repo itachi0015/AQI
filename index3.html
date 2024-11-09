@@ -189,6 +189,33 @@
     font-weight: bold; /* Make text bold for readability */
     color: black; /* Set label text color to black */
 }
+
+/* Styling the home button */
+.leaflet-bar a {
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #333;
+    padding: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-bar a:hover {
+    background-color: #f9f1f1;
+}
+
+/* Custom red home button icon */
+.home-icon {
+    display: inline-block;
+    background-image: url('https://img.icons8.com/?size=100&id=80319&format=png&color=000000');
+    background-repeat: no-repeat; /* Prevent repeat */
+    background-position: center; /* Center the icon */
+}
+
+.leaflet-bar a:hover .home-icon {
+    background-color: #ff3939;  /* Change the hover color if desired */
+}
+
+
     </style>
 </head>
 <body>
@@ -264,7 +291,8 @@
         maxZoom: 18,
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
-    
+
+
 
     //Add WMS layer from GeoServer
     const wmsLayer = L.tileLayer.wms('http://localhost:8080/geoserver/Geo27/wms', {
@@ -315,9 +343,33 @@
         // Optionally, add any layer to the map by default
         // industryLayer.addTo(map); // Uncomment this if you want to show the industry layer by default
         // vegetationLayer.addTo(map); // Uncomment this if you want to show the vegetation layer by default
-        
 
 
+            // Create a home button and add it to the map controls
+var homeButton = L.control({position: 'topright'});
+
+homeButton.onAdd = function(map) {
+    var button = L.DomUtil.create('a', 'leaflet-bar home-icon');
+    button.href = '#';
+    button.title = 'Home';
+    
+    // Set the red home icon for the button
+    button.style.backgroundImage = "url('https://img.icons8.com/?size=100&id=80319&format=png&color=000000')"; // Red home icon
+    button.style.backgroundSize = '50px 50px'; // Size of the icon
+    button.style.width = '50px';  // Button width
+    button.style.height = '50px'; // Button height
+    button.style.border = 'none'; // Remove border
+    
+    // When clicked, it resets the map view to the home coordinates
+    button.onclick = function() {
+        map.setView([18.6400, 74.1000], 9); // Reset to home location (Pune)
+        return false; // Prevent page refresh
+    };
+
+    return button;
+};
+
+homeButton.addTo(map);
 
 
     // Dictionary to store district coordinates and AQI data
