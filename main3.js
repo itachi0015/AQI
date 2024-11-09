@@ -1,6 +1,6 @@
 script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
-    const apiKey = '81416dd6c2425ae4865f21aa138b5f65'; // Add your OpenWeatherMap API key here
+    const apiKey = '--------------------'; // Add your OpenWeatherMap API key here
 
     // Initialize the map
     const map = L.map('map').setView([18.6400, 74.1000], 9); // Centering on Pune
