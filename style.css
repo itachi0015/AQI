@@ -44,21 +44,77 @@ p {
     margin: 0;
     font-size: 0.9rem;
 }
-/* District list styling */
+
+/* Styling for the right sidebar */
+#right-sidebar {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Styling for each section title */
+#right-sidebar h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Additional spacing between sections */
+#right-sidebar .section {
+    margin-bottom: 20px;
+}
+
+/* Styling for the AQI details */
+#right-sidebar #aqi-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Weather info */
+#right-sidebar #weather-info {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the legend */
+#right-sidebar #legend {
+    margin-top: 30px;
+}
+
+#right-sidebar #legend .legend-color {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#right-sidebar #data-source {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #888;
+}
+
+/* List styling for district */
 #left-sidebar ul {
     list-style-type: none;
-    padding: 0;
-    font-size: 0.9rem;
+    padding-left: 0;
 }
+
 #left-sidebar li {
-    padding: 6px;
+    padding: 8px;
     cursor: pointer;
-    margin-bottom: 2px;
-    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
+
 #left-sidebar li:hover {
-    background-color: #ddd;
-}
-.selected {
-    background-color: #b0d4ff;
+    background-color: #ccc;
 }
